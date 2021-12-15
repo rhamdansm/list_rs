@@ -39,5 +39,3 @@ def model(kelurahan,kecamatan) :
     result.drop(-1,axis=0,inplace=True)
     result.reset_index(inplace=True)
     return result
-
-a =model("Pekayon","Pasar Rebo") 
