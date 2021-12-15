@@ -19,3 +19,6 @@ def result():
         pred = model.model(kel,kec)
 
     return render_template ("list.html",test=pred)
+
+if __name__ == '__main__':
+    app.run(debug=True)
