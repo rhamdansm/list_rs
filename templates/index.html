@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="bg">
+    <div class='kotak'>
+        <img src="../static/asset/logo.png" id='logo'>
+        <form action="/result" method="POST" class="form">
+            <div class='kab-kota'>
+                <p>Kab/Kota</p>
+                <select id="kabkota" name="kota">
+                    {% for kota in tempat%}
+                    <option value="{{kota}}" class="{{kota}}">{{kota}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class='kec-kel'>
+                <div class="kec">
+                    <p>Kecamatan</p>
+                    <select id="kecamatan" name="kec">
+                        {% for kota in tempat%} {% for kec_keys in tempat.values() %} {% for kec in kec_keys %}
+                        <option value="{{kec}}" class="{{kota}}">{{kec}}</option>
+                        {% endfor %} {% endfor %} {% endfor %}
+                    </select>
+                </div>
+                <div class="kel">
+                    <p>Kelurahan</p>
+                    <select id="kelurahan" name="kel">
+                        {% for kec_keys in tempat.values() %} {% for kel_keys in kec_keys.values() %} 
+                        {% for kel in kel_keys %}  
+                        <option value="{{kel}}">{{kel}}</option>
+                        {% endfor %} {% endfor %} {% endfor %}
+                    </select> 
+                </div>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

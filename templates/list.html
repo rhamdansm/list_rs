@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/list.css">
+</head>
+<body>
+    <h1>Rekomendasi Rumah Sakit</h1>
+    <div class="main">
+        {% for key,value in test.iterrows() %}
+        <div class="card">
+            <div class="point"><h2>{{ key+1 }}</h2></div>
+            <div class="data">
+                <h4>{{ value["jenis_rumah_sakit"] }}</h4>
+                <h3>{{ value["nama_rumah_sakit"] }}</h3>
+                <h4>{{ value["Kode Pusat"] }}</h4>
+                <h4>Alamat : </h4>
+                <p>{{ value["Alamat"] }}, {{ value["kelurahan"] }}, {{ value["Kecamatan"] }}, DKI Jakarta</p>
+            </div>
+            <div class="telp"><h4>{{ value["Telepon"] }}</h4></div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
