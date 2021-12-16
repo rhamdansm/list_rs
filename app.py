@@ -1,4 +1,9 @@
 from flask import Flask, render_template, request
+import pandas as pd
+import numpy as np
+from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+from sklearn.cluster import KMeans
 
 import lokasi , model
 
