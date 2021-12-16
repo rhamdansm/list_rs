@@ -1,11 +1,3 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
-from sklearn.cluster import KMeans
-
 def model(kelurahan,kecamatan) :
     data = pd.read_csv('data_rs.csv')
 
